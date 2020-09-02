@@ -26,4 +26,8 @@ Introducir a los asistentes en el control de versiones utilizando Git desde RStu
 ### Licencia:
 Este curso se comparte bajo la licencia [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES).
 
+### Citar como:
+![](https://zenodo.org/badge/DOI/10.5281/zenodo.4012062.svg)
+
+Yanina Bellini Saibene, & Marysol Gatti. (2020, September). yabellini/Intro_to_Git_with_Rstudio: Primeros pasos de Git con R y RStudio (Version v1.0). Zenodo. http://doi.org/10.5281/zenodo.4012062
 
