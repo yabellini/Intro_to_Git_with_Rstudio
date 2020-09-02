@@ -2,6 +2,8 @@
 
 Este curso en Español, fue organizado por [R-Ladies Santa Rosa](https://twitter.com/RLadiesSR), [R-Ladies General Pico](https://twitter.com/RLadiesGP) y [R-Ladies Buenos Aires](https://twitter.com/RLadiesBA)
 
+### Autoras: Yanina Bellini Saibene y Marysol Gatti
+
 ### Objetivo: 
 Introducir a los asistentes en el control de versiones utilizando Git desde RStudio.
 
