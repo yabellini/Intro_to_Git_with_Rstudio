@@ -1,4 +1,4 @@
-## Primeros pasos de Git con R
+## Primeros pasos de Git con R y RStudio
 
 Este curso en Español, fue organizado por [R-Ladies Santa Rosa](https://twitter.com/RLadiesSR), [R-Ladies General Pico](https://twitter.com/RLadiesGP) y [R-Ladies Buenos Aires](https://twitter.com/RLadiesBA)
 
