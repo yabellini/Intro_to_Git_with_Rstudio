@@ -1,0 +1,259 @@
+Version Control
+Control de versiones con Git y RStudio
+R-Ladies General Pico
+R-Ladies Buenos Aires
+R-Ladies Santa Rosa
+
+Dibujo de Aang : https://www.wallpaperbetter.com/es/hd-wallpaper-tgtpe 
+Logo de R-Ladies
+Logo de licencia Creative Commons con atribución no comercial
+
+La leyenda de Aang (o el último maestro aire) es un animé donde hay personas que tiene el poder de controlar los elementos (agua, aire, tierra y fuego), se los llama maestros y a su habilidad se le llama agua control, fuego control, etc.  Esperamos que después de este taller todes terminemos siendo maestras/os del Version Control ;)
+
+Este material es compartido bajo la licencia Creative Commons - con atribución y uso no comercial.
+
+
+¿Quién sos vos?
+Romina trabaja ordenando y analizando datos utilizando R para una variedad de clientes.  
+Utiliza proyectos en RStudio para ordenar su trabajo.
+Comparte sus avances y resultados utilizando herramientas en la nube (como dropbox y google drive).  
+Compartir de esta manera le ha traído varios dolores de cabeza
+Sabe que Git puede ayudarla con estos problemas pero no le queda claro como.
+Tiene usuario en GitHub pero nunca usó.  
+Quiere entender como funciona y como usarlo con R y RStudio para poder incorporarlo a sus proyectos.
+Dibujo de Korra mirando una notebook (Fuente: https://www.wallpaperbetter.com/es/hd-wallpaper-feift )
+
+Primer paso: ¿Qué es versionar código?
+El versionado almacena todas las modificaciones realizadas en el código.
+Permite acceder a versiones anteriores de cualquier archivo.
+Garantiza el trabajo en equipo de manera eficiente.
+Acciones útiles: regresar a una versión anterior de tu proyecto, comparar cambios, ver quien realizó y para que una modificación, recuperar archivos perdidos…. Y MUCHO MAS ! 
+
+¿Qué vamos a ver?
+Control de Versiones
+Repositorio Remoto
+GitHub
+Interfaz
+web
+Computadora de colaborador
+pull
+push
+pull
+push
+Repositorio Local
+Staging area
+Directorio de trabajo
+commit
+add
+Directorio del proyecto
+RStudio IDE
+Tu computadora
+Proyecto de RStudio
+En esta diapositiva se presenta el Mapa conceptual del taller.  El mapa conceptual presenta los conceptos que serán cubiertos durante el meetup.  Estos conceptos se presentan en cajas o círculos como sustantivos y las relaciones entre ellos por medio de flechas con verbos.  En nuestro caso el mapa conceptual se presenta el funcionamiento de Git: en tu computadora tienes RStudio IDE y un proyecto de RStudio, con un directorio de trabajo, que será el repositorio local de Git, al que podremos hacer Add de archivos a la Staging area, desde la cual podremos hacer Commit al repositorio local. Desde este repositorio local podemos hacer Push y Pull hacia el repositorio remoto que puede estar en GitHub.  Esta misma configuración está en la máquina de todos los colaboradores.
+
+
+
+¿Cómo empezamos?
+Creamos un repositorio local y luego lo publicamos en el servidor remoto
+Creamos el repositorio en el servidor remoto y luego lo descargamos en nuestro directorio local.
+Bajamos un repositorio existente desde el servidor remoto, mediante el comando :  git clone <remote>
+
+Opciones:
+
+Comandos básicos: Add
+Sinopsis : git add
+Descripción: 
+Agrega el archivo o directorio al Staging Area.
+Opciones:
+git add <file-path>
+git add -all
+git add -u
+git add .
+
+
+  
+
+Directorio de trabajo
+Staging area
+add
+El esquema de este slide el cuadro de Directorio de trabajo tiene una flecha que se llama add con dirección hacia el cuadro Staging area
+
+Sinopsis: git commit 
+Descripción:   
+Agrega/guarda los cambios al repositorio local.
+Opciones:  
+git commit -m “Primer commit”
+git commit -am “Primer commit”
+git revert “hash_commit”
+ 
+ 
+
+Staging area
+Repositorio Local
+Commit
+
+Comandos básicos: Commit
+El esquema de este slide el cuadro de Staging area tiene una flecha que se llama commit con dirección hacia el cuadro Repositorio local
+
+Comandos básicos: Add
+
+Sinopsis: git pull
+Descripción: 
+Actualiza el repositorio local con el repositorio remoto.
+ Opciones: 
+  git pull <remote>
+
+
+
+
+
+Comandos básicos: Pull
+Repositorio Remoto
+Repositorio Local
+pull
+El esquema de este slide el cuadro de Repositorio remoto tiene una flecha que se llama pull con dirección hacia el cuadro Repositorio Local
+
+Comandos básicos: Pull
+
+Sinopsis: git push
+Descripción: 
+Envía los cambios desde el repositorio local al repositorio 
+remoto
+Opciones:
+git push 
+git push -- force
+ 
+Comandos básicos: Push
+Repositorio Local
+Repositorio Remoto
+push
+El esquema de este slide el cuadro de Repositorio Local tiene una flecha que se llama push con dirección hacia el cuadro Repositorio Remoto
+
+ Sin versionar
+Sin modificar
+Modificado
+Staged
+Add
+Editamos archivo
+Commit
+Push
+
+Ciclo de vida de los archivos mediante Git
+El esquema de este slide muestra el ciclo de vida de los archivos mediante Git. El primer cuadro representa el estado “Sin versionar”, hay un segundo cuadro que simboliza el estado “Sin modificar”, un tercer cuadro que muestra el estado “Modificado” y por último un cuadro que representa el estado Staged. Entre los estados/cuadros hay flechas que simbolizan el cambio de estado. Entre el cuadro “Sin versionar” y el cuadro “Staged” hay una flecha que se llama Add. Entre el cuadro “Sin modificar” y el cuadro “Modificado” hay una flecha que se llama “Editamos archivo”. Entre el cuadro “Modificado” y “Staged” hay una flecha que se llama “Commit”. Por último entre el cuadro “Staged” y el cuadro “sin modificar” hay una flecha que se llama “Push”
+
+Ejecutar pull antes de hacer un push.
+Quedarnos tranquilxs que Git gestiona los conflictos.
+Siempre se puede volver a una versión anterior, solucionar, romper y volver a solucionar :)
+Para tener en cuenta :)
+
+¿Qué software necesitamos?
+Git
+(consola)
+IDEs para manejar Git
+Git en la web
+Para poder realizar todos los comandos que vimos antes, tenemos que tener instalados los siguientes softwares:
+
+Última versión de R: https://cloud.r-project.org/
+Útima versión preview de RStudio: https://www.rstudio.com/products/rstudio/download/preview/
+Git para Windows: https://gitforwindows.org/
+macOS: http://git-scm.com/downloads 
+
+Git para Linux: 
+Ubuntu o Debian Linux:  sudo apt-get install git
+Fedora o RedHat Linux: sudo yum install git
+Clientes de Git:
+
+GitKraken: https://www.gitkraken.com/
+
+GitHub Desktop: https://desktop.github.com/ 
+
+Github: https://github.com/ 
+
+Guías: 
+https://book.git-scm.com/
+https://www.atlassian.com/es/git/tutorials/learn-git-with-bitbucket-cloud
+http://marklodato.github.io/visual-git-guide/index-en.html
+
+
+
+Nuevo proyecto, GitHub primero
+Crear repositorio en Github
+Crear proyecto en RStudio relacionandolo con el repo de Github
+Usar control de versiones!
+
+* Ir a https://github.com y asegúrate de haber iniciado sesión.
+
+ * Hacé clic en el botón verde "Nuevo repositorio" o, si estás en tu página de perfil, hacé clic en "Repositorios", luego haga clic en el botón verde "Nuevo".  complear con los siguientes datos:
+
+  - Nombre del repositorio: MiRepo (o el nombre que quieras, pero que sea signficativo del proyecto que vas a realizar, que te ayude a recordar de que se trataba cuando lo veas en un tiempo)
+    
+  - Público
+    
+  - *SÍ* inicializa este repositorio con un archivo _README_
+
+* Hacé clic en el botón verde grande "Crear repositorio".
+
+
+
+Copia la URL HTTPS para clonar el repositorio mediante el botón verde "Clonar o descargar" (o copia la URL SSH si elegiste utilizar claves SSH).
+
+* En RStudio, generar un nuevo proyecto:
+
+_File > New Project > Version Control > Git_ .En la "URL del repositorio", pegue la URL de su nuevo repositorio de GitHub. Será algo como esto https://github.com/nombreusuario/MiRepo.git.  Seleccionar _Open in new session_ y hacé clic en _Create Project_. Esto debería descargar el archivo README.md  que creamos en GitHub en el paso anterior.
+
+Cuando hacemos click en _Create Project_ se crea un nuevo directorio (carpeta), que cumplirá todas estas funciones:
+ 
+	- un directorio o "carpeta" en su computadora
+    
+	- un repositorio de Git, vinculado a un repositorio de GitHub remoto
+    
+	- un proyecto de RStudio
+ 
+El proyecto ya está listo para ser usando con control de versiones.
+
+En ausencia de otras restricciones, se sugiere que todos tus proyectos de R tengan exactamente esta configuración.
+
+Hay una gran ventaja en el flujo de trabajo “GitHub primero, luego RStudio”: el repositorio de GitHub se agrega como remoto para tu repositorio local y tu _master local_ está ahora mirando los cambios de la _master en GitHub_. Este es un punto muy técnico pero importante sobre Git. La parte práctica es que ahora está configurado para hacer `pull` y `push`, sin necesidad de la linea de comandos.
+
+
+
+Proyecto existente, GitHub primero
+Crear repositorio en Github
+Crear proyecto en RStudio relacionandolo con el repo de Github
+Copiar en este proyecto todos los script, datos, etc.
+Usar control de versiones!
+Imagen de Katara, maestra agua que hace agua control ( https://www.wallpaperbetter.com/es/hd-wallpaper-fltkm)
+
+Usando control de versiones
+Modificar en RStudio y enviar al repo remoto.
+Modificar en el repo remoto y bajar los cambios a RStudio.
+Imagen de Toph Beifong maestra tierra que hace tierra control: https://www.wallpaperbetter.com/es/hd-wallpaper-flfdz 
+
+¿ Cómo seguimos ?
+Post con todo el material del meetup: https://yabellini.netlify.app/es/post/githubconr/ 
+
+Happy Git and GitHub for the useR: https://happygitwithr.com/index.html 
+
+Imagen del principe Zuko, maestro fuego que hace fuego control: https://www.wallpaperbetter.com/es/hd-wallpaper-flelw 
+
+https://latin-r.com/
+
+31 de Mayo 
+Presentación de trabajos
+
+Somos MetaDocencia
+
+https://metadocencia.netlify.com
+https://github.com/metadocencia
+metadocencia@gmail.com
+https://metadocencia.slack.com
+http://tiny.cc/youtubeMetaDocencia
+Twitter: @metadocencia
+
+Vamos a ver tus preguntas en 
+el chat
+@yabellini @marysol_gatti
+@rladiesSR @rladies_pico @rladiesBA
+Gracias por llegar hasta aquí, esperamos que pronto seas un maestro de Version Control ;)
+Fuete figura de los cuatro maestros: https://www.wallpaperbetter.com/es/hd-wallpaper-zrypv
+
