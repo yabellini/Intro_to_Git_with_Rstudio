@@ -18,6 +18,10 @@ Introducir a los asistentes en el control de versiones utilizando Git desde RStu
 
 ### Material:
 
+* [Slides en PDF](https://github.com/yabellini/Intro_to_Git_with_Rstudio/blob/master/GitConR_Slides.pdf)
+* [Slides en PPT, incluye notas del orador](https://github.com/yabellini/Intro_to_Git_with_Rstudio/blob/master/GitConR_Slides.pptx)
+* [Slides en TXT, incluye notas del orador](https://github.com/yabellini/Intro_to_Git_with_Rstudio/blob/master/GitConR.txt)
+* [Blog post con instrucciones](https://yabellini.netlify.app/es/post/githubconr/)
 
 ### Licencia:
 Este curso se comparte bajo la licencia [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES).
