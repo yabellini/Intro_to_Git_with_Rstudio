@@ -1,0 +1,90 @@
+---
+title: "Version Control. Primeros pasos de Git con R"
+---
+
+## ¿De qué se trata este curso?
+
+En este post introducimos los primeros pasos para usar Git con RStudio
+title: Primeros pasos de Git con R.
+
+### Contenido:
+
+1. Qué es el control de versiones.
+2. Qué es git, que diferencia tiene con GitHub.
+3. Cuales son los estados de un archivo que tiene control de versiones.
+4. Cuales son los comandos de git para cambiar esos estados.
+5. Como tener control de versiones en un proyecto de RStudio.
+6. Cómo aplico los comandos de git desde RStudio.
+
+Los materiales presentan un video con el taller completo, incluyendo conceptos teóricos y práctica con código. 
+
+## ¿Quién sos vos?
+
+Cada lección debe ser pensada, organizada y generada para una audiencia en particular, esta es la persona en la que pensamos cuando preparamos este taller:
+
+>*Romina* trabaja ordenando y analizando datos utilizando R para una variedad de clientes.  
+Utiliza proyectos en RStudio para ordenar su trabajo.
+Comparte sus avances y resultados utilizando herramientas en la nube (como dropbox y google drive).  
+Compartir de esta manera le ha traído varios dolores de cabeza
+Sabe que Git puede ayudarla con estos problemas pero no le queda claro como.
+Tiene usuario en GitHub pero nunca usó.  
+Quiere entender como funciona y como usarlo con R y RStudio para poder incorporarlo a sus proyectos.
+
+## ¿Qué vamos a ver?
+
+Este mapa conceptual presenta el contenido de este taller
+
+!["Mapa conceptual: El mapa conceptual presenta los conceptos que serán cubiertos durante el meetup.  Estos conceptos se presentan en cajas o círculos como sustantivos y las relaciones entre ellos por medio de flechas con verbos.  En nuestro caso el mapa conceptual se presenta el funcionamiento de Git: en tu computadora tienes RStudio IDE y un proyecto de RStudio, con un directorio de trabajo, que será el repositorio local de Git, al que podremos hacer Add de archivos a la Staging area, desde la cual podremos hacer Commit al repositorio local. Desde este repositorio local podemos hacer Push y Pull hacia el repositorio remoto que puede estar en GitHub.  Esta misma configuración está en la máquina de todos los colaboradores."](img/git_concept_map.png)
+
+
+## Antes de empezar
+
+### R y RStudio
+
+Asumimos que tenes instalado R y RStudio, si no es así [seguí estas intrucciones](https://paocorrales.github.io/deExcelaR/instalacion.html) que Paola Corrales y Elio Campitelli escribieron de forma tan clara.
+
+## ¿Quienes somos? 
+
+**Marysol Gatti**
+
+<img src="img/marisol_circle.png" alt="Foto de Marysol" width="100" height="100" align="left" style="margin:10px"/>
+
+Ingeniera en Sistemas egresada de la Universidad Nacional de La Pampa. 
+
+Actualmente es Software Engineer Team Lead en Bukeala. También es organizadora de R-Ladies General Pico (La Pampa) donde vive con su familia.  
+
+Fue desarrolladora de varias empresas tecnológicas de La Pampa incluyendo Tecro Igeniería.
+
+[Marysol LinkedIn](https://www.linkedin.com/in/marysol-gatti-b1402553/)
+
+
+**Yanina Bellini Saibene**
+
+<img src="img/yani_circle.png" alt="Foto de Yani" width="100" height="100" align="left" style="margin:10px"/>
+
+Yanina Bellini Saibene, MSc. Lic. Es investigadora titular en el Instituto Nacional de Tecnología Agropecuaria (INTA, Argentina). Aplica sus conocimientos de informática y ciencia de datos para llevar los desarrollos tecnológicos a las regiones rurales de Argentina. Coordina la Red Nacional de Modelización de Agroecosistemas en el INTA. También desarrolla software para apoyar la investigación y la educación. Es profesora de grado y posgrado en varias universidades de Argentina y Uruguay, enseñando Ciencia de Datos aplicada y desarrollando cursos abiertos y tutoriales para enseñar habilidades técnicas en el manejo de datos. Es trainer e instructora de [The Carpentries](https://carpentries.org/) e instructora certificada de [RStudio](https://education.rstudio.com/trainers/people/bellini_saibene+yanina/). Tambiés es miembro del Executive Council de The Carpentries y Conferences Team Lead de [Forwards](https://forwards.github.io/). Es cofundadora y miembro del Core-Team de [MetaDocencia](http://metadocencia.org/). Forma parte del equipo de [R-Ladies Global](https://rladies.org/), preside varias conferencias internacionales (useR! 2021, LatinR, JAIIO) y es conferencista internacional. También lidera y participa en la traducción comunitaria de material educativo y técnico al español, como [Teaching Tech Together](https://teachtogether.tech/es/index.html), [R4DS](https://es.r4ds.hadley.nz/) y lecciones de The Carpentries. 
+
+[yabellini.netlify.com](https://yabellini.netlify.com/)
+[\@yabellini](https://twitter.com/yabellini)
+
+
+## Licencia
+
+<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />
+Todo el material de este curso está bajo la licencia <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es_ES">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+
+Nos inspiramos y basamos en el libro [Happy Git and GitHub for the useR](https://happygitwithr.com/index.html) de [Jennifer Bryan](https://github.com/jennybc/happy-git-with-r)
+
+El código fuente de estos materiales y la página web pueden encontrarse en https://github.com/yabellini/Intro_to_Git_with_Rstudio.
+
+Puedes citar ester recurso como:
+
+![](https://zenodo.org/badge/DOI/10.5281/zenodo.4012062.svg)
+
+Yanina Bellini Saibene, & Marysol Gatti. (2020, September). yabellini/Intro_to_Git_with_Rstudio: Primeros pasos de Git con R y RStudio (Version v1.0). Zenodo. http://doi.org/10.5281/zenodo.4012062
+
+## ¿Cuándo y dónde?
+
+El taller fue dictado como un meetup para [R-Ladies Santa Rosa](https://twitter.com/RLadiesSR), [R-Ladies General Pico](https://twitter.com/RLadiesGP) y [R-Ladies Buenos Aires](https://twitter.com/RLadiesBA)
+
+![](img/meetup.png)

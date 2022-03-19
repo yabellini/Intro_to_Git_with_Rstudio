@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Lección 3 - Videos y Slides</title>
+
+<script src="site_libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/navigation-1.1/sourceembed.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+<style type="text/css">
+#rmd-source-code {
+  display: none;
+}
+</style>
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Version Control. Primeros pasos de Git con R</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Temas
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="01-Introduction.html">Lección 1 - Conceptos básicos de Git</a>
+    </li>
+    <li>
+      <a href="02-GitConR.html">Lección 2 - A usar Git desde RStudio</a>
+    </li>
+    <li>
+      <a href="03-materiales.html">Lección 3 - Videos y Slides</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/yabellini/Intro_to_Git_with_Rstudio">Repo</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Lección 3 - Videos y Slides</h1>
+
+</div>
+
+
+<div id="version-control.-primeros-pasos-de-git-con-r" class="section level2">
+<h2>Version Control. Primeros pasos de Git con R</h2>
+<div id="video" class="section level3">
+<h3>Video</h3>
+</div>
+</div>
+<div id="cómo-seguimos" class="section level2">
+<h2>¿Cómo seguimos?</h2>
+<p>Primero te dejamos acceso al video del meetup donde repasamos este taller:</p>
+<p><a href="https://youtu.be/33pZ9dtc-Co" title="Ver meetup"><img src="img/video.png" alt="Link al video del taller" /></a></p>
+<div id="slides" class="section level3">
+<h3>Slides</h3>
+<p>Pueden acceder a las slides desde este link: <a href="https://docs.google.com/presentation/d/1rDWruJpZPHVSCeypC_sgNYaArTzxvmFbRxum-lCuSmA/edit?usp=sharing" class="uri">https://docs.google.com/presentation/d/1rDWruJpZPHVSCeypC_sgNYaArTzxvmFbRxum-lCuSmA/edit?usp=sharing</a>.</p>
+<ul>
+<li><a href="https://github.com/yabellini/Intro_to_Git_with_Rstudio/blob/master/GitConR_Slides.pdf">Slides en PDF</a></li>
+<li><a href="https://github.com/yabellini/Intro_to_Git_with_Rstudio/blob/master/GitConR_Slides.pptx">Slides en PPT, incluye notas del orador</a></li>
+<li><a href="https://github.com/yabellini/Intro_to_Git_with_Rstudio/blob/master/GitConR.txt">Slides en TXT, incluye notas del orador</a></li>
+</ul>
+</div>
+<div id="dónde-seguir" class="section level3">
+<h3>¿Dónde seguir?</h3>
+<p>Estos son solos los primeros pasos y hay mucho mas para conocer sobre el funcionamiento del control de versiones.</p>
+<p>Recomendamos leer el libro <a href="https://happygitwithr.com/index.html">Happy Git and GitHub for the useR</a> de <a href="https://github.com/jennybc/happy-git-with-r">Jennifer Bryan</a> en el que se basa gran parte de este tutorial.</p>
+</div>
+</div>
+
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkxlY2Npw7NuIDMgLSBWaWRlb3MgeSBTbGlkZXMiDQpvdXRwdXQ6IA0KICBodG1sX2RvY3VtZW50Og0KICAgIGNvZGVfZG93bmxvYWQ6IHRydWUNCiAgICBoaWdobGlnaHQ6IHRhbmdvDQotLS0NCg0KIyMgVmVyc2lvbiBDb250cm9sLiBQcmltZXJvcyBwYXNvcyBkZSBHaXQgY29uIFINCg0KIyMjIFZpZGVvDQoNCg0KIyMgwr9Dw7NtbyBzZWd1aW1vcz8NCg0KUHJpbWVybyB0ZSBkZWphbW9zIGFjY2VzbyBhbCB2aWRlbyBkZWwgbWVldHVwIGRvbmRlIHJlcGFzYW1vcyBlc3RlIHRhbGxlcjoNCg0KWyFbTGluayBhbCB2aWRlbyBkZWwgdGFsbGVyXShpbWcvdmlkZW8ucG5nKV0oaHR0cHM6Ly95b3V0dS5iZS8zM3BaOWR0Yy1DbyAiVmVyIG1lZXR1cCIpDQoNCg0KIyMjIFNsaWRlcw0KDQpQdWVkZW4gYWNjZWRlciBhIGxhcyBzbGlkZXMgZGVzZGUgZXN0ZSBsaW5rOiBodHRwczovL2RvY3MuZ29vZ2xlLmNvbS9wcmVzZW50YXRpb24vZC8xckRXcnVKcFpQSFZTQ2V5cENfc2dOWWFBclR6eHZtRmJSeHVtLWxDdVNtQS9lZGl0P3VzcD1zaGFyaW5nLg0KDQoNCiogW1NsaWRlcyBlbiBQREZdKGh0dHBzOi8vZ2l0aHViLmNvbS95YWJlbGxpbmkvSW50cm9fdG9fR2l0X3dpdGhfUnN0dWRpby9ibG9iL21hc3Rlci9HaXRDb25SX1NsaWRlcy5wZGYpDQoqIFtTbGlkZXMgZW4gUFBULCBpbmNsdXllIG5vdGFzIGRlbCBvcmFkb3JdKGh0dHBzOi8vZ2l0aHViLmNvbS95YWJlbGxpbmkvSW50cm9fdG9fR2l0X3dpdGhfUnN0dWRpby9ibG9iL21hc3Rlci9HaXRDb25SX1NsaWRlcy5wcHR4KQ0KKiBbU2xpZGVzIGVuIFRYVCwgaW5jbHV5ZSBub3RhcyBkZWwgb3JhZG9yXShodHRwczovL2dpdGh1Yi5jb20veWFiZWxsaW5pL0ludHJvX3RvX0dpdF93aXRoX1JzdHVkaW8vYmxvYi9tYXN0ZXIvR2l0Q29uUi50eHQpDQoNCiMjIyDCv0TDs25kZSBzZWd1aXI/DQoNCkVzdG9zIHNvbiBzb2xvcyBsb3MgcHJpbWVyb3MgcGFzb3MgeSBoYXkgbXVjaG8gbWFzIHBhcmEgY29ub2NlciBzb2JyZSBlbCBmdW5jaW9uYW1pZW50byBkZWwgY29udHJvbCBkZSB2ZXJzaW9uZXMuDQoNClJlY29tZW5kYW1vcyBsZWVyIGVsIGxpYnJvIFtIYXBweSBHaXQgYW5kIEdpdEh1YiBmb3IgdGhlIHVzZVJdKGh0dHBzOi8vaGFwcHlnaXR3aXRoci5jb20vaW5kZXguaHRtbCkgZGUgW0plbm5pZmVyIEJyeWFuXShodHRwczovL2dpdGh1Yi5jb20vamVubnliYy9oYXBweS1naXQtd2l0aC1yKSBlbiBlbCBxdWUgc2UgYmFzYSBncmFuIHBhcnRlIGRlIGVzdGUgdHV0b3JpYWwu</div>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeSourceEmbed("03-materiales.Rmd");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

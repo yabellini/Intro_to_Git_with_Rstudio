@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Introducción</title>
+
+<script src="site_libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/navigation-1.1/sourceembed.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+<style type="text/css">
+#rmd-source-code {
+  display: none;
+}
+</style>
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+<style type="text/css">
+.code-folding-btn { margin-bottom: 4px; }
+</style>
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Version Control. Primeros pasos de Git con R</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Temas
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="01-Introduction.html">Lección 1 - Conceptos básicos de Git</a>
+    </li>
+    <li>
+      <a href="02-GitConR.html">Lección 2 - A usar Git desde RStudio</a>
+    </li>
+    <li>
+      <a href="03-materiales.html">Lección 3 - Videos y Slides</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/yabellini/Intro_to_Git_with_Rstudio">Repo</a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+<div class="btn-group pull-right float-right">
+<button type="button" class="btn btn-default btn-xs btn-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span>Code</span> <span class="caret"></span></button>
+<ul class="dropdown-menu dropdown-menu-right" style="min-width: 50px;">
+<li><a id="rmd-download-source" href="#">Download Rmd</a></li>
+</ul>
+</div>
+
+
+
+<h1 class="title toc-ignore">Introducción</h1>
+
+</div>
+
+
+<div id="lección-1---conceptos-básicos-de-git" class="section level2">
+<h2>Lección 1 - Conceptos básicos de Git</h2>
+<div id="primer-paso-qué-es-versionar-código" class="section level3">
+<h3>Primer paso: ¿Qué es versionar código?</h3>
+<ul>
+<li>El versionado almacena todas las modificaciones realizadas en el código.</li>
+<li>Permite acceder a versiones anteriores de cualquier archivo.</li>
+<li>Garantiza el trabajo en equipo de manera eficiente.</li>
+<li>Acciones útiles: regresar a una versión anterior de tu proyecto, comparar cambios, ver quien realizó y para que una modificación, recuperar archivos perdidos…. Y MUCHO MAS !</li>
+</ul>
+</div>
+<div id="cómo-empezamos" class="section level3">
+<h3>¿Cómo empezamos?</h3>
+<p>Opciones:</p>
+<ul>
+<li>Creamos un repositorio local y luego lo publicamos en el servidor remoto</li>
+<li>Creamos el repositorio en el servidor remoto y luego lo descargamos en nuestro directorio local.</li>
+<li>Bajamos un repositorio existente desde el servidor remoto, mediante el comando: <code>git clone &lt;remote&gt;</code></li>
+</ul>
+</div>
+<div id="comandos-básicos" class="section level3">
+<h3>Comandos básicos:</h3>
+<div id="add" class="section level4">
+<h4>Add</h4>
+<p><strong>Sinopsis :</strong> <code>git add</code></p>
+<p><strong>Descripción:</strong> Agrega el archivo o directorio al Staging Area.</p>
+<p><strong>Opciones:</strong></p>
+<pre><code>  git add &lt;file-path&gt;
+  git add -all
+  git add -u
+  git add .</code></pre>
+</div>
+<div id="commit" class="section level4">
+<h4>Commit</h4>
+<p><strong>Sinopsis:</strong> <code>git commit</code></p>
+<p><strong>Descripción:</strong><br />
+Agrega/guarda los cambios al repositorio local.</p>
+<p><strong>Opciones:</strong></p>
+<pre><code>  git commit -m “Primer commit”
+  git commit -am “Primer commit”
+  git revert “hash_commit”</code></pre>
+</div>
+<div id="pull" class="section level4">
+<h4>Pull</h4>
+<p><strong>Sinopsis:</strong> <code>git pull</code></p>
+<p><strong>Descripción:</strong> Actualiza el repositorio local con el repositorio remoto.</p>
+<p><strong>Opciones:</strong></p>
+<pre><code>  git pull &lt;remote&gt;</code></pre>
+</div>
+<div id="push" class="section level4">
+<h4>Push</h4>
+<p><strong>Sinopsis:</strong> <code>git push</code></p>
+<p><strong>Descripción:</strong> Envía los cambios desde el repositorio local al repositorio remoto.</p>
+<p><strong>Opciones:</strong></p>
+<pre><code>  git push 
+  git push -- force</code></pre>
+</div>
+<div id="ciclo-de-vida-de-los-archivos-mediante-git" class="section level4">
+<h4>Ciclo de vida de los archivos mediante Git</h4>
+<p><img src="img/estadosarchivogit.png" /></p>
+<p>El esquema muestra el ciclo de vida de los archivos mediante Git. El primer cuadro representa el estado <em>“Sin versionar”</em>, hay un segundo cuadro que simboliza el estado <em>“Sin modificar”</em>, un tercer cuadro que muestra el estado <em>“Modificado”</em> y por último un cuadro que representa el estado <em>“Staged”</em>. Entre los estados/cuadros hay flechas que simbolizan el cambio de estado.</p>
+<p>Entre el cuadro <em>“Sin versionar”</em> y el cuadro <em>“Staged”</em> hay una flecha que se llama <em>Add</em>. Entre el cuadro <em>“Sin modificar”</em> y el cuadro <em>“Modificado”</em> hay una flecha que se llama <em>“Editamos archivo”</em>. Entre el cuadro <em>“Modificado”</em> y <em>“Staged”</em> hay una flecha que se llama <em>“Commit”</em>. Por último entre el cuadro <em>“Staged”</em> y el cuadro <em>“Sin modificar”</em> hay una flecha que se llama <em>“Push”</em>.</p>
+</div>
+</div>
+<div id="para-tener-en-cuenta" class="section level3">
+<h3>Para tener en cuenta :)</h3>
+<ul>
+<li><p>Ejecutar <em>pull</em> antes de hacer un <em>push</em>.</p></li>
+<li><p>Quedarnos tranquilxs que Git gestiona los conflictos.</p></li>
+<li><p>Siempre se puede volver a una versión anterior, solucionar, romper y volver a solucionar :)</p></li>
+</ul>
+</div>
+<div id="qué-software-necesitamos" class="section level3">
+<h3>¿Qué software necesitamos?</h3>
+<p>Para poder realizar todos los comandos que vimos antes, tenemos que tener instalados los siguientes softwares:</p>
+<ul>
+<li>Última versión de R: <a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a></li>
+<li>Útima versión preview de RStudio: <a href="https://www.rstudio.com/products/rstudio/download/preview/" class="uri">https://www.rstudio.com/products/rstudio/download/preview/</a></li>
+</ul>
+<div id="git" class="section level4">
+<h4>Git</h4>
+<ul>
+<li>Git para Windows: <a href="https://gitforwindows.org/" class="uri">https://gitforwindows.org/</a></li>
+<li>Git para macOS: <a href="http://git-scm.com/downloads" class="uri">http://git-scm.com/downloads</a></li>
+<li>Git para Linux:
+<ul>
+<li>Ubuntu o Debian Linux: sudo apt-get install git</li>
+<li>Fedora o RedHat Linux: sudo yum install git</li>
+</ul></li>
+</ul>
+</div>
+<div id="clientes-de-git" class="section level4">
+<h4>Clientes de Git:</h4>
+<ul>
+<li><p>GitKraken: <a href="https://www.gitkraken.com/" class="uri">https://www.gitkraken.com/</a></p></li>
+<li><p>GitHub Desktop: <a href="https://desktop.github.com/" class="uri">https://desktop.github.com/</a></p></li>
+<li><p>Github: <a href="https://github.com/" class="uri">https://github.com/</a></p></li>
+</ul>
+<p>Este es un listado de guías sobre Git para que puedan incursionar mas en detalle sobre los comandos de git y los diferentes estados de un archivo:</p>
+<ul>
+<li><a href="https://book.git-scm.com/" class="uri">https://book.git-scm.com/</a></li>
+<li><a href="https://www.atlassian.com/es/git/tutorials/learn-git-with-bitbucket-cloud" class="uri">https://www.atlassian.com/es/git/tutorials/learn-git-with-bitbucket-cloud</a></li>
+<li><a href="http://marklodato.github.io/visual-git-guide/index-en.html" class="uri">http://marklodato.github.io/visual-git-guide/index-en.html</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkludHJvZHVjY2nDs24iDQpvdXRwdXQ6IA0KICBodG1sX2RvY3VtZW50Og0KICAgIGNvZGVfZG93bmxvYWQ6IHRydWUNCiAgICBoaWdobGlnaHQ6IHRhbmdvDQotLS0NCg0KIyMgTGVjY2nDs24gMSAtIENvbmNlcHRvcyBiw6FzaWNvcyBkZSBHaXQNCg0KIyMjIFByaW1lciBwYXNvOiDCv1F1w6kgZXMgdmVyc2lvbmFyIGPDs2RpZ28/DQoNCiogRWwgdmVyc2lvbmFkbyBhbG1hY2VuYSB0b2RhcyBsYXMgbW9kaWZpY2FjaW9uZXMgcmVhbGl6YWRhcyBlbiBlbCBjw7NkaWdvLg0KKiBQZXJtaXRlIGFjY2VkZXIgYSB2ZXJzaW9uZXMgYW50ZXJpb3JlcyBkZSBjdWFscXVpZXIgYXJjaGl2by4NCiogR2FyYW50aXphIGVsIHRyYWJham8gZW4gZXF1aXBvIGRlIG1hbmVyYSBlZmljaWVudGUuDQoqIEFjY2lvbmVzIMO6dGlsZXM6IHJlZ3Jlc2FyIGEgdW5hIHZlcnNpw7NuIGFudGVyaW9yIGRlIHR1IHByb3llY3RvLCBjb21wYXJhciBjYW1iaW9zLCB2ZXIgcXVpZW4gcmVhbGl6w7MgeSBwYXJhIHF1ZSB1bmEgbW9kaWZpY2FjacOzbiwgcmVjdXBlcmFyIGFyY2hpdm9zIHBlcmRpZG9z4oCmLiBZIE1VQ0hPIE1BUyAhIA0KDQoNCiMjIyDCv0PDs21vIGVtcGV6YW1vcz8NCg0KT3BjaW9uZXM6DQoNCiogQ3JlYW1vcyB1biByZXBvc2l0b3JpbyBsb2NhbCB5IGx1ZWdvIGxvIHB1YmxpY2Ftb3MgZW4gZWwgc2Vydmlkb3IgcmVtb3RvDQoqIENyZWFtb3MgZWwgcmVwb3NpdG9yaW8gZW4gZWwgc2Vydmlkb3IgcmVtb3RvIHkgbHVlZ28gbG8gZGVzY2FyZ2Ftb3MgZW4gbnVlc3RybyBkaXJlY3RvcmlvIGxvY2FsLg0KKiBCYWphbW9zIHVuIHJlcG9zaXRvcmlvIGV4aXN0ZW50ZSBkZXNkZSBlbCBzZXJ2aWRvciByZW1vdG8sIG1lZGlhbnRlIGVsIGNvbWFuZG86ICBgZ2l0IGNsb25lIDxyZW1vdGU+YA0KDQojIyMgQ29tYW5kb3MgYsOhc2ljb3M6IA0KDQojIyMjIEFkZA0KDQoqKlNpbm9wc2lzIDoqKiBgZ2l0IGFkZGANCg0KKipEZXNjcmlwY2nDs246KioNCkFncmVnYSBlbCBhcmNoaXZvIG8gZGlyZWN0b3JpbyBhbCBTdGFnaW5nIEFyZWEuDQoNCioqT3BjaW9uZXM6KioNCg0KYGBgIA0KICBnaXQgYWRkIDxmaWxlLXBhdGg+DQogIGdpdCBhZGQgLWFsbA0KICBnaXQgYWRkIC11DQogIGdpdCBhZGQgLg0KYGBgDQoNCiMjIyMgQ29tbWl0DQoNCioqU2lub3BzaXM6KiogYGdpdCBjb21taXRgIA0KDQoqKkRlc2NyaXBjacOzbjoqKiAgDQpBZ3JlZ2EvZ3VhcmRhIGxvcyBjYW1iaW9zIGFsIHJlcG9zaXRvcmlvIGxvY2FsLg0KDQoqKk9wY2lvbmVzOioqIA0KDQpgYGAgDQogIGdpdCBjb21taXQgLW0g4oCcUHJpbWVyIGNvbW1pdOKAnQ0KICBnaXQgY29tbWl0IC1hbSDigJxQcmltZXIgY29tbWl04oCdDQogIGdpdCByZXZlcnQg4oCcaGFzaF9jb21taXTigJ0NCmBgYCAgDQojIyMjIFB1bGwNCg0KKipTaW5vcHNpczoqKiBgZ2l0IHB1bGxgDQoNCioqRGVzY3JpcGNpw7NuOioqIA0KQWN0dWFsaXphIGVsIHJlcG9zaXRvcmlvIGxvY2FsIGNvbiBlbCByZXBvc2l0b3JpbyByZW1vdG8uDQoNCioqT3BjaW9uZXM6KiogDQpgYGANCiAgZ2l0IHB1bGwgPHJlbW90ZT4NCmBgYA0KDQojIyMjIFB1c2gNCg0KKipTaW5vcHNpczoqKiBgZ2l0IHB1c2hgDQoNCioqRGVzY3JpcGNpw7NuOioqIA0KRW52w61hIGxvcyBjYW1iaW9zIGRlc2RlIGVsIHJlcG9zaXRvcmlvIGxvY2FsIGFsIHJlcG9zaXRvcmlvIHJlbW90by4NCg0KKipPcGNpb25lczoqKiANCmBgYA0KICBnaXQgcHVzaCANCiAgZ2l0IHB1c2ggLS0gZm9yY2UNCmBgYA0KDQojIyMjIENpY2xvIGRlIHZpZGEgZGUgbG9zIGFyY2hpdm9zIG1lZGlhbnRlIEdpdA0KDQohW10oaW1nL2VzdGFkb3NhcmNoaXZvZ2l0LnBuZykNCg0KRWwgZXNxdWVtYSBtdWVzdHJhIGVsIGNpY2xvIGRlIHZpZGEgZGUgbG9zIGFyY2hpdm9zIG1lZGlhbnRlIEdpdC4gRWwgcHJpbWVyIGN1YWRybyByZXByZXNlbnRhIGVsIGVzdGFkbyBf4oCcU2luIHZlcnNpb25hcuKAnV8sIGhheSB1biBzZWd1bmRvIGN1YWRybyBxdWUgc2ltYm9saXphIGVsIGVzdGFkbyBf4oCcU2luIG1vZGlmaWNhcuKAnV8sIHVuIHRlcmNlciBjdWFkcm8gcXVlIG11ZXN0cmEgZWwgZXN0YWRvIF/igJxNb2RpZmljYWRv4oCdXyB5IHBvciDDumx0aW1vIHVuIGN1YWRybyBxdWUgcmVwcmVzZW50YSBlbCBlc3RhZG8gXyJTdGFnZWQiXy4gRW50cmUgbG9zIGVzdGFkb3MvY3VhZHJvcyBoYXkgZmxlY2hhcyBxdWUgc2ltYm9saXphbiBlbCBjYW1iaW8gZGUgZXN0YWRvLiANCg0KRW50cmUgZWwgY3VhZHJvIF/igJxTaW4gdmVyc2lvbmFy4oCdXyB5IGVsIGN1YWRybyBf4oCcU3RhZ2Vk4oCdXyBoYXkgdW5hIGZsZWNoYSBxdWUgc2UgbGxhbWEgX0FkZF8uIEVudHJlIGVsIGN1YWRybyBf4oCcU2luIG1vZGlmaWNhcuKAnV8geSBlbCBjdWFkcm8gX+KAnE1vZGlmaWNhZG/igJ1fIGhheSB1bmEgZmxlY2hhIHF1ZSBzZSBsbGFtYSBf4oCcRWRpdGFtb3MgYXJjaGl2b+KAnV8uIEVudHJlIGVsIGN1YWRybyBf4oCcTW9kaWZpY2Fkb+KAnV8geSBf4oCcU3RhZ2Vk4oCdXyBoYXkgdW5hIGZsZWNoYSBxdWUgc2UgbGxhbWEgX+KAnENvbW1pdOKAnV8uIFBvciDDumx0aW1vIGVudHJlIGVsIGN1YWRybyBf4oCcU3RhZ2Vk4oCdXyB5IGVsIGN1YWRybyBf4oCcU2luIG1vZGlmaWNhcuKAnV8gaGF5IHVuYSBmbGVjaGEgcXVlIHNlIGxsYW1hIF/igJxQdXNo4oCdXy4NCg0KIyMjIFBhcmEgdGVuZXIgZW4gY3VlbnRhIDopDQoNCiogRWplY3V0YXIgX3B1bGxfIGFudGVzIGRlIGhhY2VyIHVuIF9wdXNoXy4NCg0KKiBRdWVkYXJub3MgdHJhbnF1aWx4cyBxdWUgR2l0IGdlc3Rpb25hIGxvcyBjb25mbGljdG9zLg0KDQoqIFNpZW1wcmUgc2UgcHVlZGUgdm9sdmVyIGEgdW5hIHZlcnNpw7NuIGFudGVyaW9yLCBzb2x1Y2lvbmFyLCByb21wZXIgeSB2b2x2ZXIgYSBzb2x1Y2lvbmFyIDopDQoNCiMjIyDCv1F1w6kgc29mdHdhcmUgbmVjZXNpdGFtb3M/DQoNClBhcmEgcG9kZXIgcmVhbGl6YXIgdG9kb3MgbG9zIGNvbWFuZG9zIHF1ZSB2aW1vcyBhbnRlcywgdGVuZW1vcyBxdWUgdGVuZXIgaW5zdGFsYWRvcyBsb3Mgc2lndWllbnRlcyBzb2Z0d2FyZXM6DQoNCiogw5psdGltYSB2ZXJzacOzbiBkZSBSOiBodHRwczovL2Nsb3VkLnItcHJvamVjdC5vcmcvDQoqIMOadGltYSB2ZXJzacOzbiBwcmV2aWV3IGRlIFJTdHVkaW86IGh0dHBzOi8vd3d3LnJzdHVkaW8uY29tL3Byb2R1Y3RzL3JzdHVkaW8vZG93bmxvYWQvcHJldmlldy8NCg0KIyMjIyBHaXQNCg0KKiBHaXQgcGFyYSBXaW5kb3dzOiBodHRwczovL2dpdGZvcndpbmRvd3Mub3JnLw0KKiBHaXQgcGFyYSBtYWNPUzogaHR0cDovL2dpdC1zY20uY29tL2Rvd25sb2FkcyANCiogR2l0IHBhcmEgTGludXg6IA0KICAtIFVidW50dSBvIERlYmlhbiBMaW51eDogIHN1ZG8gYXB0LWdldCBpbnN0YWxsIGdpdA0KICAtIEZlZG9yYSBvIFJlZEhhdCBMaW51eDogc3VkbyB5dW0gaW5zdGFsbCBnaXQNCg0KIyMjIyBDbGllbnRlcyBkZSBHaXQ6DQoNCiogR2l0S3Jha2VuOiBodHRwczovL3d3dy5naXRrcmFrZW4uY29tLw0KDQoqIEdpdEh1YiBEZXNrdG9wOiBodHRwczovL2Rlc2t0b3AuZ2l0aHViLmNvbS8gDQoNCiogR2l0aHViOiBodHRwczovL2dpdGh1Yi5jb20vIA0KDQpFc3RlIGVzIHVuIGxpc3RhZG8gZGUgZ3XDrWFzIHNvYnJlIEdpdCBwYXJhIHF1ZSBwdWVkYW4gaW5jdXJzaW9uYXIgbWFzIGVuIGRldGFsbGUgc29icmUgbG9zIGNvbWFuZG9zIGRlIGdpdCB5IGxvcyBkaWZlcmVudGVzIGVzdGFkb3MgZGUgdW4gYXJjaGl2bzogDQoNCiogaHR0cHM6Ly9ib29rLmdpdC1zY20uY29tLw0KKiBodHRwczovL3d3dy5hdGxhc3NpYW4uY29tL2VzL2dpdC90dXRvcmlhbHMvbGVhcm4tZ2l0LXdpdGgtYml0YnVja2V0LWNsb3VkDQoqIGh0dHA6Ly9tYXJrbG9kYXRvLmdpdGh1Yi5pby92aXN1YWwtZ2l0LWd1aWRlL2luZGV4LWVuLmh0bWw=</div>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+<script>
+$(document).ready(function () {
+  window.initializeSourceEmbed("01-Introduction.Rmd");
+});
+</script>
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
