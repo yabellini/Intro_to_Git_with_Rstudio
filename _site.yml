@@ -1,0 +1,21 @@
+navbar:
+  title: "Version Control. Primeros pasos de Git con R"
+  left: 
+     - text: Temas
+       menu: 
+        - text: Lección 1 - Conceptos básicos de Git
+          href: 01-Introduction.html
+        - text: Lección 2 - A usar Git desde RStudio
+          href: 02-GitConR.html
+        - text: Lección 3 - Videos y Slides
+          href: 03-materiales.html
+  right:
+    - text: Repo
+      href: https://github.com/yabellini/Intro_to_Git_with_Rstudio
+output_dir: "docs"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+    

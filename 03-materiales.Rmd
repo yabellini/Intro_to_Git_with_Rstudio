@@ -1,0 +1,34 @@
+---
+title: "Lección 3 - Videos y Slides"
+output: 
+  html_document:
+    code_download: true
+    highlight: tango
+---
+
+## Version Control. Primeros pasos de Git con R
+
+### Video
+
+
+## ¿Cómo seguimos?
+
+Primero te dejamos acceso al video del meetup donde repasamos este taller:
+
+[![Link al video del taller](img/video.png)](https://youtu.be/33pZ9dtc-Co "Ver meetup")
+
+
+### Slides
+
+Pueden acceder a las slides desde este link: https://docs.google.com/presentation/d/1rDWruJpZPHVSCeypC_sgNYaArTzxvmFbRxum-lCuSmA/edit?usp=sharing.
+
+
+* [Slides en PDF](https://github.com/yabellini/Intro_to_Git_with_Rstudio/blob/master/GitConR_Slides.pdf)
+* [Slides en PPT, incluye notas del orador](https://github.com/yabellini/Intro_to_Git_with_Rstudio/blob/master/GitConR_Slides.pptx)
+* [Slides en TXT, incluye notas del orador](https://github.com/yabellini/Intro_to_Git_with_Rstudio/blob/master/GitConR.txt)
+
+### ¿Dónde seguir?
+
+Estos son solos los primeros pasos y hay mucho mas para conocer sobre el funcionamiento del control de versiones.
+
+Recomendamos leer el libro [Happy Git and GitHub for the useR](https://happygitwithr.com/index.html) de [Jennifer Bryan](https://github.com/jennybc/happy-git-with-r) en el que se basa gran parte de este tutorial.
